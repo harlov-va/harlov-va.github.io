@@ -345,6 +345,7 @@
             this.clearPickPosition();
         }
         animation(numObjects) {
+            if(!numObjects) return;
             this.clean();        
             const scene = new THREE.Scene();
             scene.background = new THREE.Color('white');
@@ -437,6 +438,7 @@
         }
 
         setPickPosition(event) {
+            if(this.idElem === 0) return;
             const pos = this._getCanvasRelativePosition(event);
             this.pickPosition.x = pos.x;
             this.pickPosition.y = pos.y;
